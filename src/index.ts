@@ -25,16 +25,16 @@ export function formatNumber(value: number, options?: NumberFormatOptions): stri
 
 export type LogLevel = 'silent' | 'info' | 'debug';
 export class Logger {
-  constructor(private level: LogLevel) {}
+  constructor(private _level: LogLevel) {}
 
   info(msg: string): void {
-    if (this.level !== 'silent') {
+    if (this._level !== 'silent') {
       console.log('[INFO]', msg);
     }
   }
 
   debug(msg: string): void {
-    if (this.level === 'debug') {
+    if (this._level === 'debug') {
       console.log('[DEBUG]', msg);
     }
   }
